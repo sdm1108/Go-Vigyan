@@ -55,7 +55,7 @@ const Navbar = () => {
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
                 <span className="text-primary font-bold text-xl">GV</span>
               </div>
-              <span className="text-white font-bold text-lg hidden sm:inline">Go Vigyan Anusandhan Kendra</span>
+              <span className="text-white font-bold text-lg hidden sm:inline">Bijendra Gaushala Welfare Association</span>
             </div>
 
             {/* Desktop Navigation */}
