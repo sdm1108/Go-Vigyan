@@ -5,17 +5,17 @@ import { useTranslation } from 'react-i18next';
 
 const slides = [
   {
-    image: '/src/assets/hero-4.jpg',
+    image: '/assets/hero-4.jpg',
     titleKey: 'hero.title',
     subtitleKey: 'hero.subtitle'
   },
   {
-    image: '/src/assets/hero-2.jpg',
+    image: '/assets/hero-2.jpg',
     titleKey: 'hero.title',
     subtitleKey: 'hero.subtitle'
   },
   {
-    image: '/src/assets/hero-3.jpg',
+    image: '/assets/hero-3.jpg',
     titleKey: 'hero.title',
     subtitleKey: 'hero.subtitle'
   }
