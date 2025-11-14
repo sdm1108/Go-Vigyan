@@ -10,7 +10,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Go Vigyan Anusandhan Kendra</h3>
+            <h3 className="text-xl font-bold mb-4"> Bijendra Gaushala Welfare Association</h3>
             <p className="text-white/80">
               Dedicated to preserving indigenous cow breeds and promoting sustainable organic farming practices.
             </p>
@@ -50,7 +50,7 @@ export const Footer = () => {
         </div>
         
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
-          <p>&copy; {new Date().getFullYear()} Go Vigyan Anusandhan Kendra. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()}  Bijendra Gaushala Welfare Association. All rights reserved.</p>
         </div>
       </div>
     </footer>

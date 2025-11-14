@@ -7,7 +7,7 @@ const resources = {
       nav: {
         home: 'Home',
         about: 'About',
-        aboutOrg: 'About Go Vigyan Anusandhan Kendra',
+        aboutOrg: 'About  Bijendra Gaushala Welfare Association',
         indianCow: 'Indian Cow',
         importance: 'Importance of Indian Cow',
         breeds: 'Identity & Breeds of Indian Cow',
@@ -33,7 +33,7 @@ const resources = {
         subtitle: 'Dedicated to cow protection, organic farming, and sustainable living'
       },
       about: {
-        title: 'Go Vigyan Anusandhan Kendra',
+        title: ' Bijendra Gaushala Welfare Association',
         description: 'GVAK is committed to promoting Indian cow breeds, organic farming practices, and traditional agricultural wisdom. We believe in sustainable development through cow-based economy and natural farming methods.'
       },
       join: {

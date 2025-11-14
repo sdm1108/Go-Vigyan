@@ -29,7 +29,7 @@ export const Navigation = () => {
             <div className="h-12 w-12 rounded-full bg-primary-foreground flex items-center justify-center">
               <span className="text-primary text-xl font-bold">GV</span>
             </div>
-            <span className="font-bold text-lg hidden md:block">Go Vigyan Anusandhan Kendra</span>
+            <span className="font-bold text-lg hidden md:block"> Bijendra Gaushala Welfare Association</span>
           </Link>
 
           {/* Desktop Menu */}

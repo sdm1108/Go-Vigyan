@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Heart, Users, Leaf } from 'lucide-react';
+import { motion } from "framer-motion";
 
 const Index = () => {
   const { t } = useTranslation();
@@ -52,30 +53,61 @@ const Index = () => {
       <HeroSlider />
 
       {/* About Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&h=400&fit=crop"
-                alt="Indian Cow"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                {t('about.title')}
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                {t('about.description')}
-              </p>
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-                <Link to="/about">Learn More</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+       <section className="py-20 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+
+      {/* LEFT SIDE */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="space-y-4"
+      >
+        <p className="text-sm font-semibold tracking-wider text-primary">
+          ABOUT US
+        </p>
+
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+          {t('about.title')}
+        </h2>
+
+        <p className="text-lg text-gray-600 leading-relaxed">
+          {t('about.description')}
+        </p>
+
+        <Button
+          asChild
+          size="lg"
+          className="mt-4 rounded-full px-8 bg-primary hover:bg-primary/90"
+        >
+          <Link to="/about">Learn More</Link>
+        </Button>
+      </motion.div>
+
+      {/* RIGHT SIDE IMAGE + BLOB */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="relative flex justify-center"
+      >
+        {/* Blob background */}
+        <div className="absolute inset-0 w-72 h-72 md:w-96 md:h-96 bg-purple-200/50 rounded-[50%] blur-2xl -z-10"></div>
+
+        {/* Your original image */}
+        <img
+          src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&h=400&fit=crop"
+          alt="Indian Cow"
+          className="rounded-xl shadow-xl w-full max-w-sm md:max-w-md object-cover"
+        />
+      </motion.div>
+
+    </div>
+  </div>
+</section>
 
       {/* Join & Donate Section */}
       <section className="py-16 bg-secondary">

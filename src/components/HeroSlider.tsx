@@ -5,17 +5,17 @@ import { useTranslation } from 'react-i18next';
 
 const slides = [
   {
-    image: 'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1600&h=600&fit=crop',
+    image: '/src/assets/hero-4.jpg',
     titleKey: 'hero.title',
     subtitleKey: 'hero.subtitle'
   },
   {
-    image: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1600&h=600&fit=crop',
+    image: '/src/assets/hero-2.jpg',
     titleKey: 'hero.title',
     subtitleKey: 'hero.subtitle'
   },
   {
-    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600&h=600&fit=crop',
+    image: '/src/assets/hero-3.jpg',
     titleKey: 'hero.title',
     subtitleKey: 'hero.subtitle'
   }

@@ -28,7 +28,7 @@ const About = () => {
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-primary">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Go Vigyan Anusandhan Kendra (GVAK) is dedicated to preserving and promoting indigenous Indian cow breeds, 
+                 Bijendra Gaushala Welfare Association (GVAK) is dedicated to preserving and promoting indigenous Indian cow breeds, 
                 organic farming practices, and traditional agricultural wisdom for sustainable development.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
