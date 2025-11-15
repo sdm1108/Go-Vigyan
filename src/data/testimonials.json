@@ -1,0 +1,37 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Rajesh Kumar",
+      "role": "Farmer",
+      "location": "Uttar Pradesh",
+      "quote": "The organic farming training has transformed my agricultural practices. My crops are healthier and more productive.",
+      "image": "/images/testimonials/rajesh.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Priya Sharma",
+      "role": "Cow Caretaker",
+      "location": "Haryana",
+      "quote": "Learning about Indian cow breeds and their importance has been enlightening. The center provides excellent guidance.",
+      "image": "/images/testimonials/priya.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Amit Patel",
+      "role": "Entrepreneur",
+      "location": "Gujarat",
+      "quote": "The cow-based economy training opened new business opportunities. Highly recommended for anyone interested in sustainable practices.",
+      "image": "/images/testimonials/amit.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Sunita Devi",
+      "role": "Homemaker",
+      "location": "Bihar",
+      "quote": "The vermicompost training helped me create organic fertilizer at home. It's cost-effective and environmentally friendly.",
+      "image": "/images/testimonials/sunita.jpg"
+    }
+  ]
+}
+

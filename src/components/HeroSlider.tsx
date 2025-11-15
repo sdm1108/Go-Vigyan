@@ -41,7 +41,7 @@ export const HeroSlider = () => {
   };
 
   return (
-    <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+    <div className="relative h-screen w-full overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -51,26 +51,32 @@ export const HeroSlider = () => {
         >
           <img
             src={slide.image}
-            alt={`Slide ${index + 1}`}
+            alt={slide.titleKey}
             className="w-full h-full object-cover"
           />
+
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
+
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white px-4 max-w-4xl">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">
                 {t(slide.titleKey)}
               </h1>
-              <p className="text-lg md:text-2xl mb-8 animate-fade-in">
+              <p className="text-lg md:text-2xl mb-8">
                 {t(slide.subtitleKey)}
               </p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                Learn More
+              <Button
+               size="lg"
+               className="mt-4 rounded-full px-8 bg-[#FCE7D8] text-[#6B4F3F] hover:bg-[#F8D9C4]"
+              >
+               Learn More
               </Button>
             </div>
           </div>
         </div>
       ))}
 
+      {/* Left Button */}
       <Button
         variant="ghost"
         size="icon"
@@ -79,6 +85,8 @@ export const HeroSlider = () => {
       >
         <ChevronLeft className="h-8 w-8" />
       </Button>
+
+      {/* Right Button */}
       <Button
         variant="ghost"
         size="icon"
@@ -88,6 +96,7 @@ export const HeroSlider = () => {
         <ChevronRight className="h-8 w-8" />
       </Button>
 
+      {/* Dots */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
         {slides.map((_, index) => (
           <button

@@ -47,14 +47,39 @@ const resources = {
         button: 'Donate Now'
       },
       testimonials: {
-        title: 'What People Say',
-        quote1: 'The training programs have transformed our farming practices completely.',
-        author1: 'Rajesh Kumar',
-        quote2: 'Excellent guidance on organic farming and cow-based agriculture.',
-        author2: 'Priya Sharma',
-        quote3: 'Their dedication to preserving Indian cow breeds is remarkable.',
-        author3: 'Amit Patel'
-      },
+       title: 'What People Say',
+       list: [
+       {
+         id: 1,
+         quote: 'The training programs have transformed our farming practices completely.',
+      name: 'Rajesh Kumar',
+      role: 'Farmer',
+      location: 'India'
+    },
+    {
+      id: 2,
+      quote: 'Excellent guidance on organic farming and cow-based agriculture.',
+      name: 'Priya Sharma',
+      role: 'Organic Farmer',
+      location: 'India'
+    },
+    {
+      id: 3,
+      quote: 'Their dedication to preserving Indian cow breeds is remarkable.',
+      name: 'Amit Patel',
+      role: 'Gaushala Volunteer',
+      location: 'India'
+    },
+    {
+      id: 4,
+      name: "Sunita Devi",
+      role: "Homemaker",
+      location: "Bihar",
+      quote: "The vermicompost training helped me create organic fertilizer at home. It's cost-effective and environmentally friendly.",
+      image: "/images/testimonials/sunita.jpg"
+    }
+  ]
+},
       gallery: {
         title: 'Our Work',
         adopt: 'Adopt a Cow',
@@ -113,14 +138,31 @@ const resources = {
         button: 'अभी दान करें'
       },
       testimonials: {
-        title: 'लोग क्या कहते हैं',
-        quote1: 'प्रशिक्षण कार्यक्रमों ने हमारी खेती की प्रथाओं को पूरी तरह से बदल दिया है।',
-        author1: 'राजेश कुमार',
-        quote2: 'जैविक खेती और गाय आधारित कृषि पर उत्कृष्ट मार्गदर्शन।',
-        author2: 'प्रिया शर्मा',
-        quote3: 'भारतीय गाय की नस्लों को संरक्षित करने के प्रति उनका समर्पण उल्लेखनीय है।',
-        author3: 'अमित पटेल'
-      },
+  title: 'लोग क्या कहते हैं',
+  list: [
+    {
+      id: 1,
+      quote: 'प्रशिक्षण कार्यक्रमों ने हमारी खेती की प्रथाओं को पूरी तरह से बदल दिया है।',
+      name: 'राजेश कुमार',
+      role: 'किसान',
+      location: 'भारत'
+    },
+    {
+      id: 2,
+      quote: 'जैविक खेती और गाय आधारित कृषि पर उत्कृष्ट मार्गदर्शन।',
+      name: 'प्रिया शर्मा',
+      role: 'जैविक किसान',
+      location: 'भारत'
+    },
+    {
+      id: 3,
+      quote: 'भारतीय गाय की नस्लों को संरक्षित करने के प्रति उनका समर्पण उल्लेखनीय है।',
+      name: 'अमित पटेल',
+      role: 'गौशाला सेवक',
+      location: 'भारत'
+    }
+  ]
+},
       gallery: {
         title: 'हमारा काम',
         adopt: 'गाय गोद लें',

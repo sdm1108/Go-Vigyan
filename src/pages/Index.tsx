@@ -6,17 +6,14 @@ import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { Heart, Users, Leaf } from 'lucide-react';
+import { Heart, Users } from 'lucide-react';
 import { motion } from "framer-motion";
+
+// 👉 NEW IMPORT
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 const Index = () => {
   const { t } = useTranslation();
-
-  const testimonials = [
-    { quote: t('testimonials.quote1'), author: t('testimonials.author1') },
-    { quote: t('testimonials.quote2'), author: t('testimonials.author2') },
-    { quote: t('testimonials.quote3'), author: t('testimonials.author3') }
-  ];
 
   const galleryImages = [
     { url: 'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&h=300&fit=crop', title: t('gallery.adopt') },
@@ -52,110 +49,109 @@ const Index = () => {
       <Navigation />
       <HeroSlider />
 
-      {/* About Section */}
-       <section className="py-20 bg-white">
-  <div className="container mx-auto px-4">
-    <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* ⭐ UPDATED ABOUT SECTION ⭐ */}
+      <section className="py-28 bg-[#F8F3EE]">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
 
-      {/* LEFT SIDE */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="space-y-4"
-      >
-        <p className="text-sm font-semibold tracking-wider text-primary">
-          ABOUT US
-        </p>
+            {/* LEFT SIDE */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <p className="text-lg font-semibold tracking-wider text-[#C4A484]">
+                ABOUT US
+              </p>
 
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
-          {t('about.title')}
-        </h2>
+              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                {t('about.title')}
+              </h2>
 
-        <p className="text-lg text-gray-600 leading-relaxed">
-          {t('about.description')}
-        </p>
+              <p className="text-2xl text-gray-700 leading-relaxed">
+                {t('about.description')}
+              </p>
 
-        <Button
-          asChild
-          size="lg"
-          className="mt-4 rounded-full px-8 bg-primary hover:bg-primary/90"
-        >
-          <Link to="/about">Learn More</Link>
-        </Button>
-      </motion.div>
+              <Button
+                asChild
+                size="lg"
+                className="mt-6 rounded-full px-10 py-6 bg-[#EADCCD] text-[#5A4A42] hover:bg-[#E3D3C2]"
+              >
+                <Link to="/about">Learn More</Link>
+              </Button>
+            </motion.div>
 
-      {/* RIGHT SIDE IMAGE + BLOB */}
-      <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="relative flex justify-center"
-      >
-        {/* Blob background */}
-        <div className="absolute inset-0 w-72 h-72 md:w-96 md:h-96 bg-purple-200/50 rounded-[50%] blur-2xl -z-10"></div>
+            {/* RIGHT SIDE IMAGE */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="relative flex justify-center"
+            >
+              {/* Soft Glow */}
+              <div className="absolute inset-0 w-96 h-96 bg-[#E7D5C6]/60 rounded-full blur-3xl -z-10" />
 
-        {/* Your original image */}
-        <img
-          src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&h=400&fit=crop"
-          alt="Indian Cow"
-          className="rounded-xl shadow-xl w-full max-w-sm md:max-w-md object-cover"
-        />
-      </motion.div>
+              {/* Floating Circular Image */}
+              <motion.div
+                animate={{ y: [0, -12, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                className="rounded-full p-3 bg-[#F3E5D8] shadow-xl"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=600&h=600&fit=crop"
+                  alt="Indian Cow"
+                  className="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover shadow-[0_25px_35px_rgba(0,0,0,0.3)]"
+                />
+              </motion.div>
+            </motion.div>
 
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
 
       {/* Join & Donate Section */}
-      <section className="py-16 bg-secondary">
+      <section className="py-16 bg-[#FAF7F3]">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-2 border-primary">
+
+            {/* JOIN CARD */}
+            <Card className="border-2 border-[#E6D6C7] bg-[#FFFDFB]">
               <CardContent className="p-8 text-center">
-                <Users className="h-16 w-16 mx-auto mb-4 text-primary" />
+                <Users className="h-16 w-16 mx-auto mb-4 text-[#C7A996]" />
                 <h3 className="text-2xl font-bold mb-4">{t('join.title')}</h3>
                 <p className="text-muted-foreground mb-6">{t('join.description')}</p>
-                <Button className="bg-primary hover:bg-primary/90">
+
+                <Button className="bg-[#E8D8C8] text-[#5A4A42] hover:bg-[#DFCBB8]">
                   {t('join.button')}
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-accent">
+            {/* DONATE CARD */}
+            <Card className="border-2 border-[#D9C4B6] bg-[#FFFDFB]">
               <CardContent className="p-8 text-center">
-                <Heart className="h-16 w-16 mx-auto mb-4 text-accent" />
+                <Heart className="h-16 w-16 mx-auto mb-4 text-[#C8A89D]" />
                 <h3 className="text-2xl font-bold mb-4">{t('donateSection.title')}</h3>
                 <p className="text-muted-foreground mb-6">{t('donateSection.description')}</p>
-                <Button asChild className="bg-accent hover:bg-accent/90">
+
+                <Button
+                  asChild
+                  className="bg-[#E9D6CF] text-[#5A4A42] hover:bg-[#DCC8C0]"
+                >
                   <Link to="/donate">{t('donateSection.button')}</Link>
                 </Button>
               </CardContent>
             </Card>
+
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            {t('testimonials.title')}
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-2 hover:border-primary transition-colors">
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground italic mb-4">"{testimonial.quote}"</p>
-                  <p className="font-bold text-primary">— {testimonial.author}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ⭐ TESTIMONIAL SECTION ⭐ */}
+      <TestimonialsSection />
 
       {/* Gallery */}
       <section className="py-16 bg-muted">
@@ -163,6 +159,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             {t('gallery.title')}
           </h2>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {galleryImages.map((image, index) => (
               <div key={index} className="relative group overflow-hidden rounded-lg aspect-square">
@@ -177,15 +174,17 @@ const Index = () => {
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* News & Articles */}
+      {/* News */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             {t('news.title')}
           </h2>
+
           <div className="grid md:grid-cols-3 gap-8">
             {newsArticles.map((article, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">

@@ -1,3 +1,5 @@
+'use client';
+
 import { TopBar } from '@/components/TopBar';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
@@ -7,16 +9,21 @@ const About = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <TopBar />
-      <Navigation />
-      
-      <main className="flex-1 py-16 bg-background">
+    <div className="min-h-screen flex flex-col bg-white">
+      {/* Fixed TopBar + Navigation */}
+      <div className="fixed top-0 left-0 w-full z-50">
+        <TopBar />
+        <Navigation />
+      </div>
+
+      {/* Add padding-top so content does not go under navbar */}
+      <main className="flex-1 pt-[140px] pb-16 bg-background">
         <div className="container mx-auto px-4">
+          
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
             {t('nav.aboutOrg')}
           </h1>
-          
+
           <div className="grid md:grid-cols-2 gap-12 mb-12">
             <div>
               <img
@@ -25,14 +32,18 @@ const About = () => {
                 className="rounded-lg shadow-lg w-full"
               />
             </div>
+
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-primary">Our Mission</h2>
+
               <p className="text-lg text-muted-foreground leading-relaxed">
-                 Bijendra Gaushala Welfare Association (GVAK) is dedicated to preserving and promoting indigenous Indian cow breeds, 
-                organic farming practices, and traditional agricultural wisdom for sustainable development.
+                Bijendra Gaushala Welfare Association (GVAK) is dedicated to preserving and promoting indigenous Indian cow breeds, organic farming practices,
+                and traditional agricultural wisdom for sustainable development. With a deep commitment to protecting Gaumata and nurturing nature, 
+                GVAK creates a positive impact by supporting farmers, inspiring conscious living, and ensuring that future generations inherit a greener, more harmonious world.
               </p>
+
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We believe in the holistic benefits of cow-based economy and natural farming methods that have sustained 
+                We believe in the holistic benefits of cow-based economy and natural farming methods that have sustained
                 Indian agriculture for centuries.
               </p>
             </div>
@@ -40,12 +51,14 @@ const About = () => {
 
           <div className="prose max-w-none">
             <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
+
             <p className="text-muted-foreground mb-6">
-              To create a sustainable ecosystem where traditional knowledge meets modern science, ensuring the protection 
+              To create a sustainable ecosystem where traditional knowledge meets modern science, ensuring the protection
               of indigenous cow breeds while empowering farmers with organic farming techniques.
             </p>
 
             <h2 className="text-2xl font-bold mb-4">What We Do</h2>
+
             <ul className="space-y-3 text-muted-foreground">
               <li>• Cow protection and breed preservation programs</li>
               <li>• Training in organic farming and sustainable agriculture</li>
@@ -54,6 +67,7 @@ const About = () => {
               <li>• Support for farmers transitioning to organic methods</li>
             </ul>
           </div>
+
         </div>
       </main>
 
