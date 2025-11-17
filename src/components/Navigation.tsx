@@ -194,7 +194,7 @@ export const Navigation = () => {
               className={`border ${
                 scrolled
                   ? "border-black text-black hover:bg-black hover:text-white"
-                  : "border-white text-white hover:bg-white hover:text-black"
+                  : "border-white text-black hover:bg-white hover:text-black"
               }`}
             >
               {i18n.language === 'en' ? 'हिन्दी' : 'English'}
