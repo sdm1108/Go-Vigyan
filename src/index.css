@@ -8,40 +8,41 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 40 20% 97%;
-    --foreground: 30 15% 15%;
+    --background: 0 0% 100%;
+    --foreground: 150 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 30 15% 15%;
+    --card-foreground: 150 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 30 15% 15%;
+    --popover-foreground: 150 10% 15%;
 
-    --primary: 16 100% 60%;
+    --primary: 152 76% 36%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 40% 92%;
-    --secondary-foreground: 30 15% 15%;
+    --secondary: 45 93% 58%;
+    --secondary-foreground: 150 10% 15%;
 
-    --muted: 40 15% 90%;
-    --muted-foreground: 30 10% 45%;
+    --muted: 150 10% 95%;
+    --muted-foreground: 150 8% 46%;
 
-    --accent: 25 90% 55%;
+    --accent: 152 76% 36%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 20% 85%;
-    --input: 30 20% 85%;
-    --ring: 16 100% 60%;
+    --border: 150 10% 90%;
+    --input: 150 10% 90%;
+    --ring: 152 76% 36%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     
-    --earth-brown: 30 35% 40%;
-    --warm-beige: 35 30% 85%;
-    --sacred-green: 120 35% 45%;
-    --golden-accent: 45 100% 50%;
+    --hero-overlay: 150 30% 15%;
+    --gradient-primary: linear-gradient(135deg, hsl(152 76% 36%), hsl(152 60% 45%));
+    --gradient-hero: linear-gradient(to bottom, rgba(20, 83, 45, 0.7), rgba(20, 83, 45, 0.85));
+    --shadow-soft: 0 10px 40px -10px hsl(152 76% 36% / 0.2);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -61,38 +62,37 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 30 15% 10%;
-    --foreground: 40 20% 95%;
+    --background: 150 20% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 30 15% 12%;
-    --card-foreground: 40 20% 95%;
+    --card: 150 20% 10%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 30 15% 12%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 150 20% 10%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 16 100% 60%;
+    --primary: 152 76% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 20% 18%;
-    --secondary-foreground: 40 20% 95%;
+    --secondary: 45 93% 58%;
+    --secondary-foreground: 150 10% 15%;
 
-    --muted: 30 15% 20%;
-    --muted-foreground: 40 10% 60%;
+    --muted: 150 15% 15%;
+    --muted-foreground: 150 8% 65%;
 
-    --accent: 25 90% 55%;
+    --accent: 152 76% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 15% 25%;
-    --input: 30 15% 25%;
-    --ring: 16 100% 60%;
+    --border: 150 15% 20%;
+    --input: 150 15% 20%;
+    --ring: 152 76% 45%;
     
-    --earth-brown: 30 35% 50%;
-    --warm-beige: 35 20% 25%;
-    --sacred-green: 120 35% 55%;
-    --golden-accent: 45 100% 60%;
+    --hero-overlay: 150 30% 10%;
+    --gradient-primary: linear-gradient(135deg, hsl(152 76% 45%), hsl(152 60% 55%));
+    --gradient-hero: linear-gradient(to bottom, rgba(10, 50, 25, 0.8), rgba(10, 50, 25, 0.9));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -111,5 +111,69 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
 }
